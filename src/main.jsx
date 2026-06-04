@@ -9,7 +9,6 @@ import {
   ExternalLink,
   Fingerprint,
   Headphones,
-  Mail,
   MessageCircle,
   MonitorCog,
   Presentation,
@@ -797,14 +796,6 @@ function Contact() {
           <a className="secondary-button" href={profile.unknownCheatsUrl} target="_blank" rel="noreferrer">
             UC
             <img className="button-logo" src={asset('assets/brands/unknowncheats.png')} alt="" />
-          </a>
-          <a className="secondary-button" href="mailto:contact@example.com">
-            Email
-            <Mail size={17} />
-          </a>
-          <a className="secondary-button" href="https://github.com/" target="_blank" rel="noreferrer">
-            GitHub
-            <img className="button-logo" src={asset('assets/brands/github.svg')} alt="" />
           </a>
         </div>
       </Reveal>
