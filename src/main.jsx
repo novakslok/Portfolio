@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import './styles.css';
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 const profile = {
   alias: 'Novaks',
   discordUserId: '1000842736154448025',
@@ -32,29 +34,29 @@ const profile = {
 const languages = [
   {
     name: 'C++',
-    image: '/assets/brands/cplusplus.svg',
+    image: asset('assets/brands/cplusplus.svg'),
   },
   {
     name: 'Assembly',
-    image: '/assets/brands/assemblyscript.svg',
+    image: asset('assets/brands/assemblyscript.svg'),
   },
   {
     name: 'JavaScript',
-    image: '/assets/brands/javascript.svg',
+    image: asset('assets/brands/javascript.svg'),
   },
   {
     name: 'Python',
-    image: '/assets/brands/python.svg',
+    image: asset('assets/brands/python.svg'),
   },
 ];
 
 const tools = [
-  { name: 'IDA Pro', image: '/assets/tools/ida-lady.png' },
+  { name: 'IDA Pro', image: asset('assets/tools/ida-lady.png') },
   { name: 'CodeNinja', image: null },
-  { name: 'Ghidra', image: '/assets/tools/ghidra.svg' },
-  { name: 'x64dbg', image: '/assets/tools/x64dbg-real.png' },
-  { name: 'Wireshark', image: '/assets/brands/wireshark.svg' },
-  { name: 'Burp Suite', image: '/assets/brands/burpsuite.svg' },
+  { name: 'Ghidra', image: asset('assets/tools/ghidra.svg') },
+  { name: 'x64dbg', image: asset('assets/tools/x64dbg-real.png') },
+  { name: 'Wireshark', image: asset('assets/brands/wireshark.svg') },
+  { name: 'Burp Suite', image: asset('assets/brands/burpsuite.svg') },
 ];
 
 const offers = [
@@ -87,9 +89,9 @@ const demoRows = [
 const webBadges = ['novaks.exe', 'ida wins', 'rain mode', 'reversing', 'uc release', 'paid work'];
 
 const gifRelics = [
-  { src: '/assets/gifs/black-cat.gif' },
-  { src: '/assets/gifs/we-miss-you.gif' },
-  { src: '/assets/gifs/art-waves.gif' },
+  { title: 'late night monitor', src: asset('assets/gifs/black-cat.gif') },
+  { title: 'we miss you', src: asset('assets/gifs/we-miss-you.gif') },
+  { title: 'signal waves', src: asset('assets/gifs/art-waves.gif') },
 ];
 
 const statusPalette = {
@@ -272,7 +274,7 @@ function useDiscordPresence(userId) {
     status: userId ? 'unknown' : 'unknown',
     activity: userId ? 'Syncing Discord presence' : 'Add Discord user ID to enable live status',
     source: userId ? 'lanyard' : 'fallback',
-    avatar: '/assets/profile.png',
+    avatar: asset('assets/profile.png'),
   });
 
   React.useEffect(() => {
@@ -300,7 +302,7 @@ function useDiscordPresence(userId) {
             status: 'unknown',
             activity: 'Lanyard is not tracking this Discord user yet',
             source: 'fallback',
-            avatar: '/assets/profile.png',
+            avatar: asset('assets/profile.png'),
           });
           return;
         }
@@ -311,7 +313,7 @@ function useDiscordPresence(userId) {
         const avatarHash = data.discord_user?.avatar;
         const avatar = avatarHash
           ? `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}.png?size=256`
-          : '/assets/profile.png';
+          : asset('assets/profile.png');
 
         setPresence({
           status: data.discord_status || 'offline',
@@ -325,7 +327,7 @@ function useDiscordPresence(userId) {
             status: 'unknown',
             activity: 'Lanyard is not tracking this Discord user yet',
             source: 'fallback',
-            avatar: '/assets/profile.png',
+            avatar: asset('assets/profile.png'),
           });
         }
       }
@@ -359,7 +361,7 @@ function Intro() {
         <span className="water-ripple water-ripple-two" />
       </div>
       <div className="intro-reveal">
-        <img src="/assets/profile.png" alt="Novaks profile" className="intro-avatar" />
+        <img src={asset('assets/profile.png')} alt="Novaks profile" className="intro-avatar" />
         <p>Welcome to my place stranger</p>
         <h2>{profile.alias}</h2>
       </div>
@@ -380,7 +382,7 @@ function RainScene() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0">
       <img
-        src="/assets/rain-forest-bg.png"
+        src={asset('assets/rain-forest-bg.png')}
         alt=""
         className="rain-bg absolute inset-0 h-full w-full object-cover opacity-70 grayscale"
       />
@@ -413,7 +415,7 @@ function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
         <a href="#top" className="brand-link flex items-center gap-3 font-mono text-sm uppercase tracking-[0.28em]">
           <span className="nav-avatar">
-            <img src="/assets/profile.png" alt="" />
+            <img src={asset('assets/profile.png')} alt="" />
           </span>
           {profile.alias}
         </a>
@@ -437,7 +439,7 @@ function Hero({ age }) {
         <div className="hero-copy animate-fadeUp">
           <div className="hero-kicker">
             <span className="status-orb-small">
-              <img src="/assets/profile.png" alt="" />
+              <img src={asset('assets/profile.png')} alt="" />
             </span>
             <span>happy to see you here ;)</span>
           </div>
@@ -460,7 +462,7 @@ function Hero({ age }) {
 
         <div className="hero-side animate-fadeUp">
           <div className="meme-card">
-            <img src="/assets/ida-win-meme.png" alt="Nah, IDA win meme" />
+            <img src={asset('assets/ida-win-meme.png')} alt="Nah, IDA win meme" />
           </div>
           <div className="hero-note">
             <strong>Internet should be a better place ;)</strong>
@@ -596,7 +598,7 @@ function SocialHub({ discord }) {
         <SectionLabel icon={Radio} text="Live Surface" />
         <div className="mt-8 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
           <article className="discord-panel">
-            <img className="panel-brand panel-brand-discord" src="/assets/brands/discord.svg" alt="" />
+            <img className="panel-brand panel-brand-discord" src={asset('assets/brands/discord.svg')} alt="" />
             <div className="discord-visual">
               <div className="discord-rings" />
               <img src={discord.avatar} alt={`${profile.alias} Discord avatar`} />
@@ -612,7 +614,7 @@ function SocialHub({ discord }) {
               <p className="mt-3 font-mono text-sm text-[#cfc2b0]">@{profile.discordHandle}</p>
               <p className="mt-5 text-lg leading-8 text-[#e8dcc8]">{discord.activity}</p>
               <div className="mt-7 grid gap-3 sm:grid-cols-3">
-                <DiscordSignal image="/assets/brands/discord.svg" icon={MessageCircle} label="Discord" value="Contact" />
+                <DiscordSignal image={asset('assets/brands/discord.svg')} icon={MessageCircle} label="Discord" value="Contact" />
                 <DiscordSignal icon={Headphones} label="Presence" value={discord.source === 'lanyard' ? 'Live API' : 'Fallback'} />
                 <DiscordSignal icon={Activity} label="Refresh" value="30s" />
               </div>
@@ -621,7 +623,7 @@ function SocialHub({ discord }) {
 
           <article className="uc-panel">
             <div className="uc-orbit">
-              <img src="/assets/brands/unknowncheats.png" alt="UnknownCheats logo" />
+              <img src={asset('assets/brands/unknowncheats.png')} alt="UnknownCheats logo" />
               <span />
               <span />
               <span />
@@ -790,11 +792,11 @@ function Contact() {
             rel={profile.discordUserId ? 'noreferrer' : undefined}
           >
             Discord
-            <img className="button-logo" src="/assets/brands/discord.svg" alt="" />
+            <img className="button-logo" src={asset('assets/brands/discord.svg')} alt="" />
           </a>
           <a className="secondary-button" href={profile.unknownCheatsUrl} target="_blank" rel="noreferrer">
             UC
-            <img className="button-logo" src="/assets/brands/unknowncheats.png" alt="" />
+            <img className="button-logo" src={asset('assets/brands/unknowncheats.png')} alt="" />
           </a>
           <a className="secondary-button" href="mailto:contact@example.com">
             Email
@@ -802,7 +804,7 @@ function Contact() {
           </a>
           <a className="secondary-button" href="https://github.com/" target="_blank" rel="noreferrer">
             GitHub
-            <img className="button-logo" src="/assets/brands/github.svg" alt="" />
+            <img className="button-logo" src={asset('assets/brands/github.svg')} alt="" />
           </a>
         </div>
       </Reveal>
