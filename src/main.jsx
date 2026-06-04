@@ -89,9 +89,9 @@ const demoRows = [
 const webBadges = ['novaks.exe', 'ida wins', 'rain mode', 'reversing', 'uc release', 'paid work'];
 
 const gifRelics = [
-  { title: 'late night monitor', src: asset('assets/gifs/black-cat.gif') },
-  { title: 'we miss you', src: asset('assets/gifs/we-miss-you.gif') },
-  { title: 'signal waves', src: asset('assets/gifs/art-waves.gif') },
+  { src: asset('assets/gifs/black-cat.gif') },
+  { src: asset('assets/gifs/we-miss-you.gif') },
+  { src: asset('assets/gifs/art-waves.gif') },
 ];
 
 const statusPalette = {
@@ -185,10 +185,10 @@ function WebRelics() {
           ))}
         </div>
         <div className="gif-grid mt-4">
-          {gifRelics.map((gif) => (
-            <article className="gif-card" key={gif.title}>
-              <img src={gif.src} alt={gif.title} />
-              <span>{gif.title}</span>
+          {gifRelics.map((gif, index) => (
+            <article className="gif-card" key={gif.title || gif.src}>
+              <img src={gif.src} alt={gif.title || `web relic ${index + 1}`} />
+              {gif.title ? <span>{gif.title}</span> : null}
             </article>
           ))}
         </div>
