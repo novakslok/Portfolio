@@ -86,7 +86,7 @@ const demoRows = [
   { label: 'Noise Filter', value: 'LOW', active: false },
 ];
 
-const webBadges = ['novaks.exe', 'ida wins', 'rain mode', 'reversing', 'uc release', 'paid work'];
+const webBadges = ['gaming', 'should', 'be more', 'free', 'and', 'open source'];
 
 const gifRelics = [
   { src: asset('assets/gifs/black-cat.gif') },
