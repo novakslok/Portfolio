@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="chrome" x1="24" y1="20" x2="210" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".18" stop-color="#e9e9e9"/>
+      <stop offset=".38" stop-color="#8f8f8f"/>
+      <stop offset=".58" stop-color="#ffffff"/>
+      <stop offset=".82" stop-color="#b8b8b8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="64" y1="30" x2="190" y2="218" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#2b2b2b" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".5"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#000000" flood-opacity=".72"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity=".36"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" font-family="Georgia, 'Times New Roman', serif" font-weight="700">
+    <text x="26" y="154" font-size="158" fill="url(#chrome)" stroke="#f8f8f8" stroke-width="2">U</text>
+    <text x="112" y="218" font-size="148" fill="url(#chrome)" stroke="#f8f8f8" stroke-width="2">C</text>
+    <text x="26" y="154" font-size="158" fill="url(#shade)" opacity=".25">U</text>
+    <text x="112" y="218" font-size="148" fill="url(#shade)" opacity=".25">C</text>
+  </g>
+</svg>
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <rect width="96" height="96" rx="18" fill="#071019"/>
+  <path d="M48 14 77 31v34L48 82 19 65V31l29-17Z" fill="#c7a27a" fill-opacity=".72" stroke="#e8e2da" stroke-opacity=".52"/>
+  <path d="M48 25 67 36v24L48 71 29 60V36l19-11Z" fill="#071019" fill-opacity=".5"/>
+  <text x="48" y="54" text-anchor="middle" font-family="Consolas, monospace" font-size="22" font-weight="700" fill="#fff">C++</text>
+</svg>
+

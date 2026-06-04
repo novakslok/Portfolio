@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <rect width="96" height="96" rx="18" fill="#071019"/>
+  <rect x="12" y="12" width="72" height="72" rx="14" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".16"/>
+  <circle cx="48" cy="40" r="17" fill="#e8e2da" fill-opacity=".92"/>
+  <path d="M32 57c6 8 26 8 32 0" stroke="#c7a27a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M40 38h16M36 30l-6-7M60 30l6-7" stroke="#071019" stroke-width="4" stroke-linecap="round"/>
+  <text x="48" y="78" text-anchor="middle" font-family="Consolas, monospace" font-size="9" fill="#b8aa9b">GHIDRA</text>
+</svg>
+
